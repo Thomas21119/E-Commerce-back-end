@@ -14,7 +14,8 @@ Dotenv,
 
 ### Installation Instructions
 
-clone the repository using either ssh keys (git@github.com:Thomas21119/E-Commerce-back-end.git) or https (https://github.com/Thomas21119/E-Commerce-back-end.git)
+clone the repository using either ssh keys (git@github.com:Thomas21119/E-Commerce-back-end.git)
+<br> or https (https://github.com/Thomas21119/E-Commerce-back-end.git)
 <br> Run npm install
 <br> Open mysql
 <br> run: source db/schema.sql;
