@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       },
       {
         model: Tag,
-        attributes: tag_name,
+        attributes: ['tag_name'],
       },
     ],
   })
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Tag,
-        attributes: tag_name,
+        attributes: ['tag_name'],
       },
     ],
   })
@@ -123,7 +123,9 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => {
+      res.status.json(updatedProductTags);
+    })
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
@@ -140,6 +142,8 @@ router.delete('/:id', (req, res) => {
     .then((refinedData) => {
       if (!refinedData) {
         res.status(404).json({ message: 'No Product found with that ID' });
+      } else {
+        res.status(200).json(refinedData);
       }
     })
     .catch((err) => {
